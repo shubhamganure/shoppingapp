@@ -10,6 +10,6 @@ Steps to run the project:
 3) Open the project folder on the terminal and run the command as 'npm install'.
    by running 'npm install' command, it installs all the depencies of the project.
 4) After installing the dependencies, Run the command as 'ng serve'.
-    It will by default host it on the local host of 'http://localhost:4200/shop'.
-5) Open the browser and enter the url as 'http://localhost:4200/shop', 
+    It will by default host it on the local host of 'http://localhost:4200/'.
+5) Open the browser and enter the url as 'http://localhost:4200/', 
     the project will run on the local host.
