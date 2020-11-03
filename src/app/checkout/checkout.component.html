@@ -1,0 +1,42 @@
+<div fxFlex="100" fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px" class="checkout-container">
+  <mat-card fxFlex="60" >
+    <div class="mat-card-heading">
+      <h2>My Cart</h2>
+    </div>
+    <mat-hint class="noRecordHint" *ngIf="products.length == 0; else recordFound" fxLayoutAlign="center center">Cart is empty</mat-hint>
+      <ng-template #recordFound>
+        <div [ngClass]="{'productList':products.length > 1 }" *ngFor="let product of products; let index = index" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+          <div [ngStyle]="{
+            'background-image': 'url(' + product.image + ')',
+            'background-size': 'contain',
+            'background-position': 'center center',
+            'background-repeat': 'no-repeat',
+            'width':'100px',
+            'height':'100px'
+          }"></div>
+            <div fxLayout="column" fxLayoutAlign="start center"  fxLayoutGap="5px">
+              <h2>{{product.name}}</h2>
+              <span class="cart-product-price" >₹{{product.price}}</span>
+              <button mat-flat-button (click)="removeProduct(index, product.name)">Remove</button>
+            </div>
+            <div fxFlex="60" fxLayoutAlign="end center">
+              <mat-form-field fxFlex="20" appearance="fill">
+                <mat-label>Quantity</mat-label>
+                <input matInput (keyup)="quantityChange()" (change)="quantityChange()"
+                (keydown.space)="$event.preventDefault();"  [(ngModel)]="product.Quantity" type="number">
+              </mat-form-field>
+            </div>
+        </div>
+      </ng-template>
+  </mat-card>
+  <mat-card class="cart-subtotal-container" fxFlex="20" >
+    <div class="cart-subtotal-heading">
+      <h2>PRICE DETAILS</h2>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px">
+        <h2>Sub Total <span *ngIf="itemCount > 0">{{itemCount > 1?  '(' + itemCount + ' Items' +')': '(' + itemCount + ' Item' +')' }}</span>:</h2>
+        <span class="subtotal-label">₹{{subTotal}}</span>
+        <button [disabled]="itemCount == 0" mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
+    </div>
+  </mat-card>
+</div>

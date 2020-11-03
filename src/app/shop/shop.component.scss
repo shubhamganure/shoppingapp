@@ -1,0 +1,24 @@
+.shop-container{
+  padding: 30px 30px 50px 30px;
+  .product-card{
+    width: 80%; height: 80%; padding: 0;
+  }
+  .mat-card-container{
+    width: 100%;
+    height: 100%;
+  }
+}
+.product-details{
+  padding: 10px 10px;
+  .product-price{
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .product-quantity{
+    font-weight: bold;
+  }
+}
+.noRecordHint{
+  font-size: 18px;
+  font-weight: 500;
+}

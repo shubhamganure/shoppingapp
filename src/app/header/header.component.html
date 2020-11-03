@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center" >
+      <div fxFlex="90" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+        <div >
+         <button matTooltip="Back to Shop"  mat-icon-button [routerLink]="'/shop'"><mat-icon class="header-logo-icon" mat-icon-button>shopping_bag</mat-icon></button>
+        </div>
+        <span>Shopping App</span>
+      </div>
+      <div fxFlex="10" fxLayout="row" fxLayoutAlign="start center">
+        <button matTooltip="Go to Cart" mat-icon-button (click)="navigateToCheckout()">
+          <mat-icon *ngIf="cartCount > 0" [matBadge]="cartCount" matBadgeColor="warn" matBadgeSize="small">shopping_cart</mat-icon>
+          <mat-icon *ngIf="cartCount == 0" >shopping_cart</mat-icon>
+          <span>Cart</span>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

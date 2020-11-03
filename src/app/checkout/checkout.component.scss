@@ -1,0 +1,34 @@
+.productList{
+  margin-bottom: 10px;
+  border-bottom: 1px solid  #8c7e7e30;
+}
+.checkout-container{
+  padding: 30px 30px 50px 30px;
+  min-height: calc(100vh - 124px);
+  .mat-card-heading{
+    border-bottom: 1px solid #8c7e7e30;
+    margin-bottom: 10px;
+  }
+  .cart-product-price{
+    font-weight: bold;
+    font-size: 25px;
+  }
+}
+.noRecordHint{
+  font-size: 18px;
+  font-weight: 500;
+}
+.cart-subtotal-container{
+  height: 200px;
+  .cart-subtotal-heading{
+    border-bottom: 1px solid #8c7e7e30;
+    margin-bottom: 10px;
+    h2{
+      color: grey;
+    }
+  }
+  .subtotal-label{
+    font-weight: bold;
+    font-size: 25px;
+  }
+}
